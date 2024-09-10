@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light  shadow-sm" style="background-color: #e3f2fd;">
+<nav class="navbar navbar-expand-lg navbar-light  shadow-sm" style="background-color: cadetblue;">
     <div class="container">
         <!-- Logo (optional) -->
         <a class="navbar-brand">
@@ -17,16 +17,18 @@
                 <li class="nav-item">
                     <a class="nav-link" [routerLink]="['/home']">Events</a>
                 </li>
+                @if(userObj.userId>0){
                 <li class="nav-item">
                     <a class="nav-link" [routerLink]="['/booking']">My Bookings</a>
                 </li>
+                }
             </ul>
         </div>
 
         <!-- Login button -->
         <div class="d-flex">
             @if(userObj.userId>0){
-            <p class="text-center">{{userObj.name| uppercase}}</p> &nbsp;
+            <p class="text-center fw-bold text-white">{{userObj.name| uppercase}}</p> &nbsp;&nbsp;
             <button type="button" class="btn btn-outline-success px-3 me-2" (click)="logout()">
                 Logout
             </button>
