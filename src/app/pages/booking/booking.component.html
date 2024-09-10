@@ -1,0 +1,24 @@
+<div class="row">
+    <div class="container-fluid mt-3">
+        <table class="table table-bordered table-responsive">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Event Name</th>
+                    <th>Organizer</th>
+                    <th>Booking No</th>
+                    <th>Date/Time</th>
+                    <th>Total Tickets</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let event of bookingList; let i = index">
+                    <td>{{event.eventName}}</td>
+                    <td>{{event.organizerName}}</td>
+                    <td>{{event.bookingNo}}</td>
+                    <td>{{event.startDate | date:'dd-MM-yyyy'}} {{event.startTime}}</td>
+                    <td>{{event.noOfTickets}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
